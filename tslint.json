@@ -1,0 +1,15 @@
+{
+  "extends": "./node_modules/@alorel-personal/tslint-rules/tslint.json",
+  "rules": {
+    "no-default-export": false,
+    "variable-name": false,
+    "no-unbound-method": false,
+    "no-implicit-dependencies": [
+      true,
+      "dev",
+      [
+        "@material-ui/styles"
+      ]
+    ]
+  }
+}

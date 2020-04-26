@@ -1,0 +1,4 @@
+[build]
+  publish = "dist"
+  command = "yarn run build:prod"
+  environment = {NODE_VERSION = "13.13.0"}

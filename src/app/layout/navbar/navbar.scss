@@ -1,0 +1,15 @@
+.appBarCss {
+  flex-direction: row !important;
+
+  .titleCss, .appBarCss {
+    flex-grow: 1;
+  }
+
+  .menuButtonCss {
+    margin-left: 0;
+  }
+}
+
+.drawerListCss {
+  width: 250px;
+}
