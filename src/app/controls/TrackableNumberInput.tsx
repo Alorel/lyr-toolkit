@@ -1,6 +1,7 @@
+import {FilledInputProps} from '@material-ui/core/FilledInput';
 import TextField from '@material-ui/core/TextField';
 import {noop} from 'lodash-es';
-import {Component, h, VNode} from 'preact';
+import {Component, h, RenderableProps, VNode} from 'preact';
 import safeLocalStorage from '../../lib/safeLocalstorage';
 
 interface Props {
@@ -25,7 +26,6 @@ export default class TrackableNumberInput extends Component<Props, State> {
   public static defaultProps: Partial<Props> = {
     defaultMin: 0,
     label: '',
-    max: 400,
     min: 0,
     onChange: noop
   };
@@ -47,14 +47,20 @@ export default class TrackableNumberInput extends Component<Props, State> {
     this.props.onChange!(this.state.value);
   }
 
-  public render(props, state): VNode {
+  public render(props: RenderableProps<Props>, state): VNode {
+    const {min, max} = props;
+    const inputProps: FilledInputProps['inputProps'] = {min};
+    if (max != null) {
+      inputProps.max = max;
+    }
+
     return <TextField
       label={props.label}
       autoComplete='off'
       type='number'
       value={state.value}
       onChange={this._onInput}
-      inputProps={{min: props.min, max: props.max}}/>;
+      inputProps={inputProps}/>;
   }
 
   private readonly _onInput = (e: Pick<Event, 'target'>): void => {
@@ -83,7 +89,7 @@ export default class TrackableNumberInput extends Component<Props, State> {
 
   private resolveInitialValue(): number {
     const storeValue = safeLocalStorage.getItem(this.cfgKey);
-    const {min, max} = this.props;
+    const {min, max = Number.MAX_VALUE} = this.props;
 
     if (storeValue == null || isNaN(storeValue as any)) {
       return Math.max(min!, 0);
@@ -91,6 +97,6 @@ export default class TrackableNumberInput extends Component<Props, State> {
 
     const asNumber = parseInt(storeValue);
 
-    return Math.max(min!, Math.min(asNumber, max!));
+    return Math.max(min!, Math.min(asNumber, max));
   }
 }
