@@ -10,9 +10,9 @@ const useStyles = makeStyles(theme => ({
 function RefLink(props: RenderableProps<{}>): VNode {
   const s = useStyles();
 
-  return <a href="https://lyrania.co.uk/?r=237937"
-            target="blank"
-            rel="nofollow noopener"
+  return <a href='https://lyrania.co.uk/?r=237937'
+            target='blank'
+            rel='nofollow noopener'
             className={s.link}>{props.children}</a>;
 }
 
