@@ -5,6 +5,7 @@ import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 import ThemeProvider from '@material-ui/styles/ThemeProvider/ThemeProvider';
 import {h, VNode} from 'preact';
 import {EquipmentCalc} from './equip-calc/EquipmentCalc';
+import {Footer} from './layout/footer/Footer';
 import {MemoedNavbar} from './layout/navbar/Navbar';
 
 const theme = createMuiTheme({
@@ -21,6 +22,7 @@ export default function App(): VNode {
       <CssBaseline/>
       <MemoedNavbar/>
       <EquipmentCalc/>
+      <Footer/>
     </ThemeProvider>
   );
 }

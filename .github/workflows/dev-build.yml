@@ -1,0 +1,47 @@
+name: Dev Build
+on:
+  push:
+    branches-ignore:
+      - master
+
+jobs:
+  Release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Checkout
+        with:
+          fetch-depth: 1
+      - name: Cache yarn
+        uses: actions/cache@v1
+        with:
+          key: 13.x-${{ github.ref }}-yarn
+          path: .yarn/cache
+          restore-keys: |
+            13.x-refs/heads/master-yarn
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        with:
+          key: 13.x-${{ github.ref }}-node_modules
+          path: node_modules
+          restore-keys: |
+            13.x-refs/heads/master-yarn
+      - uses: actions/setup-node@v1
+        name: Set up node
+        with:
+          node-version: 13.x
+          registry-url: https://npm.pkg.github.com/alorel
+      - run: npm install -g yarn@^2.0.0-rc.27
+        name: Install yarn
+      - run: yarn install --immutable
+        name: Install deps
+        env:
+          YARN_ENABLE_GLOBAL_CACHE: 'false'
+          YARN_NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build
+        run: yarn run build:prod
+      - name: Deploy (draft)
+        run: yarn run deploy
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
