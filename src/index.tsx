@@ -1,4 +1,9 @@
-import {h, render} from 'preact';
+import {h, hydrate, render} from 'preact';
 import App from './app/App';
 
-render(<App/>, document.getElementById('root')!);
+const rootElement = document.getElementById('root') as HTMLDivElement;
+if (rootElement.innerHTML.trim()) {
+  hydrate(<App/>, rootElement);
+} else {
+  render(<App/>, rootElement);
+}
