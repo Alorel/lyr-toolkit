@@ -11,3 +11,5 @@
 *.yml text
 *.md text
 *.json text
+
+*.ico binary
