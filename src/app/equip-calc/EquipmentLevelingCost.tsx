@@ -2,7 +2,6 @@ import {Fragment, h, VNode} from 'preact';
 import {PureComponent} from 'preact/compat';
 import {CurrencyDisplay} from '../layout/CurrencyDisplay';
 import {Missing} from './EquipmentCalc';
-import {equipmentCostData} from './equipmentCostData';
 
 interface Props {
   bsLvl?: number;
@@ -58,15 +57,19 @@ export class EquipmentLevelingCost extends PureComponent<Props, State> {
 }
 
 const reduceCost: (acc: number, levels: number[]) => number = (() => {
-  function innerReducer(acc: number, lv: number): number {
-    return acc + equipmentCostData[lv - 1];
+  function costForLevel(level: number): number {
+    return (level * 100) * ((level * 100) / 2) - ((level - 1) * 100); //tslint:disable-line:no-magic-numbers
   }
 
-  function getCostFromData(levels: number[]): number {
+  function innerReducer(acc: number, lv: number): number {
+    return acc + costForLevel(lv - 1);
+  }
+
+  function computeTotalCost(levels: number[]): number {
     return levels.reduce(innerReducer, 0);
   }
 
   return (acc: number, levels: number[]): number => {
-    return levels.length ? acc + getCostFromData(levels) : acc;
+    return levels.length ? acc + computeTotalCost(levels) : acc;
   };
 })();

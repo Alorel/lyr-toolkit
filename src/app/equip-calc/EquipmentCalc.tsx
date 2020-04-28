@@ -30,12 +30,6 @@ interface State {
   target: EquipmentLevels;
 }
 
-function RenderedSubheading(): VNode {
-  const txt = 'I only have data for levels 1-400 - if you have the rest or know the math let me know please!';
-
-  return <Box textAlign='center'>{txt}</Box>;
-}
-
 export class EquipmentCalc extends PureComponent<any, State> {
   public readonly state: State = {
     bsLvl: 0,
@@ -81,7 +75,9 @@ export class EquipmentCalc extends PureComponent<any, State> {
               <Card>
                 <CardHeader title={<Box textAlign='center'>Cost</Box>}/>
                 <CardContent>
-                  <EquipmentLevelingCost bsLvl={bsLvl} missing={missing}/>
+                  <Box textAlign='center'>
+                    <EquipmentLevelingCost bsLvl={bsLvl} missing={missing}/>
+                  </Box>
                 </CardContent>
               </Card>
             </Grid>
@@ -107,8 +103,7 @@ export class EquipmentCalc extends PureComponent<any, State> {
     return (
       <Grid item>
         <Card>
-          <CardHeader title={<Box textAlign='center'>Equipment levels</Box>}
-                      subheader={<RenderedSubheading/>}/>
+          <CardHeader title={<Box textAlign='center'>Equipment levels</Box>}/>
           <CardContent>
             <Grid container direction='row' justify='center' spacing={Numbers.SPACING}>
               <Grid item>

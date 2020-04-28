@@ -9,7 +9,6 @@ import {h, VNode} from 'preact';
 import {PureComponent} from 'preact/compat';
 import TrackableNumberInput from '../controls/TrackableNumberInput';
 import {Missing} from './EquipmentCalc';
-import {EquipmentCalcLimits} from './EquipmentCalcLimits';
 import {invisible} from './EquipmentSelect.scss';
 import {equipmentTypes} from './equipmentTypes';
 
@@ -102,9 +101,8 @@ export class EquipmentSelect extends PureComponent<Props, EquipmentLevels> {
             <TrackableNumberInput name={`${this.props.keyPrefix}-${key}-eq-lv`}
                                   key={key}
                                   onChange={this.createOnChange(key)}
-                                  defaultMin={EquipmentCalcLimits.EQ_LVL_MIN}
-                                  min={EquipmentCalcLimits.EQ_LVL_MIN}
-                                  max={EquipmentCalcLimits.EQ_LVL_MAX}
+                                  defaultMin={1}
+                                  min={1}
                                   label={capitalize(key)}/>
           </Grid>
           <Grid item>{this.renderMissing(key)}</Grid>
