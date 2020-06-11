@@ -9,6 +9,7 @@
     "build:prod": "cross-env NODE_ENV=production rollup -c",
     "watch": "rollup -cw",
     "deploy": "netlify deploy",
+    "deploy:prod": "netlify deploy --prod",
     "lint": "tslint -s node_modules/custom-tslint-formatters/formatters -t grouped -p .",
     "lint:fix": "yarn run lint --fix"
   },

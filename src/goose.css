@@ -1,0 +1,61 @@
+.topgoose {
+  text-align: center;
+  text-decoration: underline;
+  font-family: monospace;
+  background: -webkit-gradient(linear, left top, right top, from(#6666ff), color-stop(#0099ff), color-stop(#00ff00), color-stop(#ff3399), to(#6666ff));
+  background: -webkit-linear-gradient(left, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
+  background: -moz-linear-gradient(left, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
+  background: -o-linear-gradient(left, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
+  background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-animation: goose-rank-anim 6s ease-in-out infinite;
+  -moz-animation: goose-rank-anim 6s ease-in-out infinite;
+  -o-animation: goose-rank-anim 6s ease-in-out infinite;
+  animation: goose-rank-anim 6s ease-in-out infinite;
+  -webkit-background-size: 400% 100%;
+  -moz-background-size: 400% 100%;
+  -o-background-size: 400% 100%;
+  background-size: 400% 100%;
+}
+
+@-webkit-keyframes goose-rank-anim {
+  0%, 100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+}
+
+@-moz-keyframes goose-rank-anim {
+  0%, 100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+}
+
+@-o-keyframes goose-rank-anim {
+  0%, 100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes goose-rank-anim {
+  0%, 100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+}
