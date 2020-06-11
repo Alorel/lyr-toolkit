@@ -23,7 +23,7 @@ const indexRenderer = new SystemjsIndexRendererRuntime({
   pugOptions: {
     self: true
   }
-})
+});
 
 export default function (rollupOptions) {
   const isWatchMode = !!rollupOptions.watch;
@@ -109,7 +109,8 @@ export default function (rollupOptions) {
           emitNameKind: 'fileName'
         },
         copy: [
-          'favicon.ico'
+          'favicon.ico',
+          'gooserank.css'
         ]
       }),
       indexRenderer.createPlugin(),
