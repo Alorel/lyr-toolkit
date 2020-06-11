@@ -1,4 +1,4 @@
-span.gooserank {
+#chatwindow span[data-t] {
   position: relative;
   display: inline-block;
   font-family: 'Montserrat', Arial, sans-serif;
@@ -20,7 +20,7 @@ span.gooserank {
   animation: gooseshake 2.5s linear forwards;
 }
 
-span.gooserank span {
+#chatwindow span[data-t] span {
   position: absolute;
   top: 0;
   left: 0;
@@ -33,15 +33,15 @@ span.gooserank span {
   clip-path: polygon(10% 0%, 44% 0%, 70% 100%, 55% 100%);
 }
 
-span.gooserank::before,
-span.gooserank::after {
-  content: attr(data-text);
+#chatwindow span[data-t]::before,
+#chatwindow span[data-t]::after {
+  content: attr(data-t);
   position: absolute;
   top: 0;
   left: 0;
 }
 
-span.gooserank::before {
+#chatwindow span[data-t]::before {
   -webkit-animation: goosecrack1 2.5s linear forwards;
   -moz-animation: goosecrack1 2.5s linear forwards;
   -o-animation: goosecrack1 2.5s linear forwards;
@@ -50,7 +50,7 @@ span.gooserank::before {
   clip-path: polygon(0% 0%, 10% 0%, 55% 100%, 0% 100%);
 }
 
-span.gooserank::after {
+#chatwindow span[data-t]::after {
   -webkit-animation: goosecrack2 2.5s linear forwards;
   -moz-animation: goosecrack2 2.5s linear forwards;
   -o-animation: goosecrack2 2.5s linear forwards;

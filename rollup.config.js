@@ -110,7 +110,7 @@ export default function (rollupOptions) {
         },
         copy: [
           'favicon.ico',
-          'gooserank.css'
+          'r.css'
         ]
       }),
       indexRenderer.createPlugin(),
