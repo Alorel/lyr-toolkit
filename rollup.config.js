@@ -110,6 +110,7 @@ export default function (rollupOptions) {
         },
         copy: [
           'favicon.ico',
+          'niss.css',
           'goose.css'
         ]
       }),

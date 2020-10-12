@@ -1,0 +1,55 @@
+.nissnub {
+  text-align: center;
+  text-decoration: underline;
+  font-family: monospace;
+  background: -webkit-gradient(linear, left top, right top, from(#f80202), color-stop(#f8f6f6), color-stop(#6c0407), color-stop(#ef1e86), to(#f80202));
+  background: -webkit-linear-gradient(left, #f80202, #f8f6f6, #6c0407, #ef1e86, #f80202);
+  background: -moz-linear-gradient(left, #f80202, #f8f6f6, #6c0407, #ef1e86, #f80202);
+  background: -o-linear-gradient(left, #f80202, #f8f6f6, #6c0407, #ef1e86, #f80202);
+  background: linear-gradient(to right, #f80202, #f8f6f6, #6c0407, #ef1e86, #f80202);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: niss-is-an-animated-noob 6s ease-in-out infinite;
+  background-size: 400% 100%;
+}
+
+@-webkit-keyframes niss-is-an-animated-noob {
+  0%, 100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+}
+
+@-moz-keyframes niss-is-an-animated-noob {
+  0%, 100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+}
+
+@-o-keyframes niss-is-an-animated-noob {
+  0%, 100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes niss-is-an-animated-noob {
+  0%, 100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+}
