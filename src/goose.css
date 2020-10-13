@@ -20,14 +20,6 @@
   background-size: 400% 100%;
 }
 
-.topgoose::before {
-  content: 'Colossal tit, ';
-}
-
-.topgoose::after {
-  content: ', and de-facto lord of honks'
-}
-
 @-webkit-keyframes goose-rank-anim {
   0%, 100% {
     background-position: 0 0;
