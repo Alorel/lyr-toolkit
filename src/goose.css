@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+
 .topgoose {
   text-align: center;
   text-decoration: underline;
-  font-family: monospace;
+  font-family: Yellowtail, cursive;
+  padding-right: 5px;
+  text-transform: uppercase;
   background: -webkit-gradient(linear, left top, right top, from(#6666ff), color-stop(#0099ff), color-stop(#00ff00), color-stop(#ff3399), to(#6666ff));
   background: -webkit-linear-gradient(left, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
   background: -moz-linear-gradient(left, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
